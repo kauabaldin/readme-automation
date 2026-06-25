@@ -1,31 +1,30 @@
-# 🚀 Readme Automation
+# 🚀 README Automático
 
 > Automatize a geração e atualização dos arquivos **README.md** dos seus projetos com apenas uma instalação.
 
-O **Readme Automation** monitora arquivos `.prw` e `.tlpp` e mantém o `README.md` sempre atualizado, eliminando a necessidade de editar a documentação manualmente.
+O **README Automático** monitora arquivos `.prw` e `.tlpp` e mantém o `README.md` sempre atualizado, eliminando a necessidade de editar a documentação manualmente.
 
 > [!TIP]
 > Após a instalação, basta salvar um arquivo `.prw` ou `.tlpp` para que o `README.md` do módulo seja atualizado automaticamente.
 
 ---
 
-## ✨ Funcionalidades
+# ✨ Funcionalidades
 
 - ✅ Geração automática do `README.md`
 - ✅ Atualização automática ao salvar arquivos `.prw` e `.tlpp`
 - ✅ Compatível com projetos contendo múltiplos módulos
 - ✅ Instalação simplificada
 - ✅ Preserva as configurações existentes do Visual Studio Code
-- ✅ Configura automaticamente o **Run On Save**
-- ✅ Instala automaticamente a extensão (quando disponível)
-- ✅ Atualização manual através de comando
+- ✅ Configura automaticamente a extensão **Run On Save**
+- ✅ Atualização manual quando necessário
 
 ---
 
 # 📂 Estrutura do Projeto
 
 ```text
-readme-automation/
+readme-automatico/
 │
 ├── scripts/
 │   ├── generate-readmes.ps1
@@ -35,14 +34,14 @@ readme-automation/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── readme-automation.bat
+└── readme-automatico.bat
 ```
 
 ---
 
 # 📋 Requisitos
 
-Antes de instalar, verifique se possui:
+Antes de instalar, certifique-se de possuir:
 
 - Windows
 - PowerShell 5.1 ou superior
@@ -56,13 +55,13 @@ Antes de instalar, verifique se possui:
 ## 1. Clone o repositório
 
 ```bash
-git clone https://github.com/kauabaldin/readme-automation.git
+git clone https://github.com/kauabaldin/readme-automatico.git
 ```
 
 Entre na pasta:
 
 ```bash
-cd readme-automation
+cd readme-automatico
 ```
 
 ---
@@ -91,25 +90,25 @@ ou
 D:\Workspace
 ```
 
-Não é necessário informar o caminho manualmente.
+Não é necessário digitar o caminho manualmente.
 
 ---
 
 # ⚙️ O que o instalador faz?
 
-Durante a instalação, o Readme Automation:
+Durante a instalação, o README Automático:
 
-- Cria a pasta `scripts` caso ela não exista;
-- Copia o script `generate-readmes.ps1`;
-- Cria a pasta `.vscode` caso ela não exista;
-- Preserva as configurações existentes do VS Code;
-- Adiciona a configuração do **Run On Save**;
-- Adiciona a recomendação da extensão **emeraldwalk.runonsave**;
-- Instala automaticamente a extensão (quando possível);
+- Cria a pasta `scripts`, caso não exista;
+- Copia o script de geração automática;
+- Cria a pasta `.vscode`, caso não exista;
+- Preserva as configurações existentes do Visual Studio Code;
+- Configura automaticamente o **Run On Save**;
+- Adiciona a recomendação da extensão **Run On Save**;
+- Instala a extensão automaticamente (quando possível);
 - Cria um arquivo interno para controle da instalação.
 
 > [!NOTE]
-> Nenhuma configuração existente do VS Code é removida ou sobrescrita.
+> Nenhuma configuração existente do Visual Studio Code é removida ou sobrescrita.
 
 ---
 
@@ -117,7 +116,7 @@ Durante a instalação, o Readme Automation:
 
 Após concluir a instalação, basta abrir seus projetos normalmente no Visual Studio Code.
 
-Sempre que um arquivo abaixo for salvo:
+Sempre que salvar um arquivo:
 
 - `.prw`
 - `.tlpp`
@@ -131,7 +130,7 @@ o `README.md` será atualizado automaticamente.
 Caso deseje atualizar todos os READMEs manualmente:
 
 ```bat
-readme-automation.bat
+readme-automatico.bat
 ```
 
 ---
@@ -178,7 +177,7 @@ Execute:
 powershell -ExecutionPolicy Bypass -File scripts\uninstall.ps1
 ```
 
-A desinstalação remove apenas os arquivos e configurações adicionados pelo **Readme Automation**, preservando as configurações pessoais existentes.
+A desinstalação remove apenas os arquivos e configurações adicionados pelo **README Automático**, preservando as configurações pessoais existentes.
 
 ---
 
@@ -186,7 +185,7 @@ A desinstalação remove apenas os arquivos e configurações adicionados pelo *
 
 Contribuições são sempre bem-vindas!
 
-Se encontrar algum problema ou tiver uma sugestão de melhoria:
+Caso encontre algum problema ou tenha sugestões:
 
 * Abra uma **Issue**;
 * Envie um **Pull Request**.
