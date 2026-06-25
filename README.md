@@ -1,42 +1,23 @@
 # 🚀 Readme Automation
 
-Automatiza a geração dos arquivos `README.md` dos módulos TOTVS sempre que um arquivo `.prw` ou `.tlpp` é salvo no Visual Studio Code.
+Automatize a geração e atualização dos arquivos `README.md` dos seus projetos sempre que um arquivo `.prw` ou `.tlpp` for salvo no Visual Studio Code.
 
 ---
 
-# ✨ O que esta ferramenta faz?
+## ✨ Funcionalidades
 
-Após a instalação, sempre que você salvar um arquivo:
-
-* `.prw`
-* `.tlpp`
-
-o README do módulo será atualizado automaticamente.
-
-Exemplo:
-
-Antes:
-
-```text
-Modulo Financeiro
-
-FINA001
-```
-
-Após adicionar um novo fonte:
-
-```text
-Modulo Financeiro
-
-FINA001
-FINA002
-```
+* ✅ Geração automática do `README.md`
+* ✅ Atualização automática ao salvar arquivos `.prw` e `.tlpp`
+* ✅ Compatível com projetos com múltiplos módulos
+* ✅ Instalação simplificada
+* ✅ Preserva as configurações existentes do VS Code
+* ✅ Configura automaticamente o Run On Save
 
 ---
 
 # 📋 Pré-requisitos
 
-Antes de instalar, verifique se possui:
+Antes de instalar, certifique-se de possuir:
 
 * Windows
 * Git
@@ -47,7 +28,7 @@ Antes de instalar, verifique se possui:
 
 # 📥 Instalação
 
-## 1. Clone este repositório
+## 1. Clone o repositório
 
 ```bash
 git clone https://github.com/kauabaldin/readme-automation.git
@@ -63,94 +44,55 @@ cd readme-automation
 
 ## 2. Execute o instalador
 
-Abra um PowerShell como usuário comum e execute:
-
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1
 ```
 
 ---
 
-## 3. Informe onde ficam os módulos
+## 3. Informe o diretório dos seus projetos
 
-O instalador solicitará o caminho onde estão os repositórios da empresa.
+Durante a instalação será solicitado o caminho onde estão armazenados os seus projetos.
 
-Exemplo:
+Exemplos:
 
 ```text
-C:\RepositorioGuerra
+C:\Projetos
 ```
 
 ou
 
 ```text
-D:\Projetos\Empresa
+D:\Workspace
 ```
 
 ---
 
-## 4. Aguarde a configuração
+## ⚙️ O que o instalador faz?
 
-Durante a instalação serão realizadas automaticamente as seguintes ações:
+Automaticamente o instalador:
 
-* ✅ Criação da pasta `scripts` (caso não exista);
-* ✅ Cópia do `GenerateAllReadmes.ps1`;
-* ✅ Criação da pasta `.vscode`;
-* ✅ Atualização do `settings.json`;
-* ✅ Atualização do `extensions.json`;
-* ✅ Configuração do Run On Save.
+* Cria a pasta `scripts` (caso não exista);
+* Copia o script `GenerateAllReadmes.ps1`;
+* Cria a pasta `.vscode` (caso não exista);
+* Mescla as configurações existentes do VS Code;
+* Configura a extensão **Run On Save**;
+* Configura a atualização automática dos arquivos `README.md`.
 
-Nenhuma configuração existente do VS Code será perdida.
-
----
-
-## 5. Instale a extensão (caso necessário)
-
-Se a extensão ainda não estiver instalada, o VS Code irá sugerir automaticamente.
-
-Nome:
-
-```text
-Run On Save
-```
-
-ID:
-
-```text
-emeraldwalk.runonsave
-```
-
-Ou execute:
-
-```bash
-code --install-extension emeraldwalk.runonsave
-```
+> **Nenhuma configuração existente do VS Code é removida ou sobrescrita.**
 
 ---
 
 # ▶️ Como utilizar
 
-Depois da instalação basta abrir o projeto normalmente no VS Code.
+Após a instalação, basta editar qualquer arquivo:
 
-Sempre que salvar um arquivo:
+* `.prw`
+* `.tlpp`
 
-```text
-.prw
-```
+Ao salvar (`Ctrl + S`), o README será atualizado automaticamente.
 
-ou
-
-```text
-.tlpp
-```
-
-o README será atualizado automaticamente.
-
----
-
-# 🔄 Atualização manual
-
-Caso deseje atualizar todos os READMEs manualmente:
+Também é possível executar a atualização manualmente:
 
 ```text
 updateReadme.bat
@@ -164,15 +106,33 @@ powershell -ExecutionPolicy Bypass -File scripts\GenerateAllReadmes.ps1
 
 ---
 
-# 🔄 Atualizando esta ferramenta
+# 📄 Exemplo de README Gerado
 
-Quando houver uma nova versão:
+```markdown
+# Módulo Exemplo
+
+Repositório contendo os fontes customizados do módulo.
+
+---
+
+| Fonte |
+| ------ |
+| EXEMPLO001 |
+| EXEMPLO002 |
+| EXEMPLO003 |
+```
+
+---
+
+# 🔄 Atualizando a ferramenta
+
+Sempre que houver uma nova versão:
 
 ```bash
 git pull
 ```
 
-Depois execute novamente:
+Em seguida execute novamente:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1
@@ -182,24 +142,20 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 
 # ❌ Desinstalação
 
-Para remover todas as configurações instaladas:
-
 ```powershell
 powershell -ExecutionPolicy Bypass -File uninstall.ps1
 ```
 
 ---
 
-# ❓ Dúvidas
+# 🤝 Contribuindo
 
-Caso encontre algum problema:
+Contribuições são bem-vindas!
 
-* Verifique se o VS Code está instalado.
-* Confirme que a extensão **Run On Save** está habilitada.
-* Execute novamente o `install.ps1`.
+Caso encontre algum problema ou tenha sugestões de melhorias, abra uma **Issue** ou envie um **Pull Request**.
 
 ---
 
 # 📄 Licença
 
-Projeto distribuído sob a licença MIT.
+Este projeto está licenciado sob a licença **MIT**.
