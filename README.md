@@ -1,66 +1,53 @@
-````markdown
 # 🚀 Readme Automation
 
-Ferramenta para automatizar a geração e atualização dos arquivos `README.md` em projetos TOTVS, baseada nos arquivos `.prw` e `.tlpp`.
-
-O objetivo é manter todos os módulos documentados automaticamente, sem a necessidade de editar o README manualmente.
+Automatiza a geração dos arquivos `README.md` dos módulos TOTVS sempre que um arquivo `.prw` ou `.tlpp` é salvo no Visual Studio Code.
 
 ---
 
-## ✨ Funcionalidades
+# ✨ O que esta ferramenta faz?
 
-- ✅ Geração automática do `README.md`
-- ✅ Atualização ao salvar arquivos `.prw` e `.tlpp`
-- ✅ Compatível com projetos contendo vários módulos
-- ✅ Instalação simples através de um script PowerShell
-- ✅ Não sobrescreve as configurações existentes do VS Code
-- ✅ Adiciona automaticamente a configuração do Run On Save
-- ✅ Recomenda automaticamente a extensão necessária do VS Code
+Após a instalação, sempre que você salvar um arquivo:
 
----
+* `.prw`
+* `.tlpp`
 
-# 📁 Estrutura do Projeto
+o README do módulo será atualizado automaticamente.
+
+Exemplo:
+
+Antes:
 
 ```text
-readme-automation/
-│
-├── README.md
-├── LICENSE
-├── CHANGELOG.md
-├── install.ps1
-├── uninstall.ps1
-├── updateReadme.bat
-│
-├── scripts/
-│   └── GenerateAllReadmes.ps1
-│
-├── vscode/
-│   ├── settings.template.json
-│   └── extensions.template.json
-│
-├── examples/
-│   ├── README.before.md
-│   └── README.after.md
-│
-└── docs/
-    ├── INSTALL.md
-    └── HOW_IT_WORKS.md
-````
+Modulo Financeiro
+
+FINA001
+```
+
+Após adicionar um novo fonte:
+
+```text
+Modulo Financeiro
+
+FINA001
+FINA002
+```
 
 ---
 
-# ⚙️ Requisitos
+# 📋 Pré-requisitos
+
+Antes de instalar, verifique se possui:
 
 * Windows
-* PowerShell 5.1+
-* Visual Studio Code
 * Git
+* Visual Studio Code
+* PowerShell 5.1 ou superior
 
 ---
 
 # 📥 Instalação
 
-Clone o repositório:
+## 1. Clone este repositório
 
 ```bash
 git clone https://github.com/kauabaldin/readme-automation.git
@@ -72,13 +59,21 @@ Entre na pasta:
 cd readme-automation
 ```
 
-Execute o instalador:
+---
+
+## 2. Execute o instalador
+
+Abra um PowerShell como usuário comum e execute:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1
 ```
 
-Durante a instalação será solicitado o caminho da pasta onde ficam os módulos da empresa.
+---
+
+## 3. Informe onde ficam os módulos
+
+O instalador solicitará o caminho onde estão os repositórios da empresa.
 
 Exemplo:
 
@@ -92,57 +87,32 @@ ou
 D:\Projetos\Empresa
 ```
 
-O instalador irá:
+---
 
-* Criar a pasta `scripts` caso não exista;
-* Copiar o script `GenerateAllReadmes.ps1`;
-* Criar a pasta `.vscode` caso não exista;
-* Mesclar as configurações existentes do VS Code;
-* Adicionar a recomendação da extensão **Run On Save**;
-* Configurar a execução automática do script ao salvar arquivos `.prw` e `.tlpp`.
+## 4. Aguarde a configuração
+
+Durante a instalação serão realizadas automaticamente as seguintes ações:
+
+* ✅ Criação da pasta `scripts` (caso não exista);
+* ✅ Cópia do `GenerateAllReadmes.ps1`;
+* ✅ Criação da pasta `.vscode`;
+* ✅ Atualização do `settings.json`;
+* ✅ Atualização do `extensions.json`;
+* ✅ Configuração do Run On Save.
+
+Nenhuma configuração existente do VS Code será perdida.
 
 ---
 
-# ▶️ Utilização
+## 5. Instale a extensão (caso necessário)
 
-Após a instalação basta editar qualquer arquivo:
+Se a extensão ainda não estiver instalada, o VS Code irá sugerir automaticamente.
 
-* `.prw`
-* `.tlpp`
-
-Ao salvar (`Ctrl + S`) o README será atualizado automaticamente.
-
-Também é possível executar manualmente:
+Nome:
 
 ```text
-updateReadme.bat
+Run On Save
 ```
-
----
-
-# 📄 Exemplo de README Gerado
-
-```markdown
-# Modulo Financeiro
-
-Repositorio dos fontes customizados do modulo.
-
----
-
-| Fonte |
-|------|
-| FINA001 |
-| FINA002 |
-| FINA003 |
-```
-
----
-
-# 📦 Dependências
-
-O projeto utiliza a extensão do VS Code:
-
-**Run On Save**
 
 ID:
 
@@ -150,19 +120,59 @@ ID:
 emeraldwalk.runonsave
 ```
 
-Caso a extensão não esteja instalada, o VS Code irá sugerir sua instalação automaticamente ao abrir o projeto.
+Ou execute:
+
+```bash
+code --install-extension emeraldwalk.runonsave
+```
 
 ---
 
-# 🔄 Atualização
+# ▶️ Como utilizar
 
-Sempre que houver uma nova versão:
+Depois da instalação basta abrir o projeto normalmente no VS Code.
+
+Sempre que salvar um arquivo:
+
+```text
+.prw
+```
+
+ou
+
+```text
+.tlpp
+```
+
+o README será atualizado automaticamente.
+
+---
+
+# 🔄 Atualização manual
+
+Caso deseje atualizar todos os READMEs manualmente:
+
+```text
+updateReadme.bat
+```
+
+ou
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\GenerateAllReadmes.ps1
+```
+
+---
+
+# 🔄 Atualizando esta ferramenta
+
+Quando houver uma nova versão:
 
 ```bash
 git pull
 ```
 
-Caso existam novas funcionalidades execute novamente:
+Depois execute novamente:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1
@@ -170,7 +180,7 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 
 ---
 
-# 🗑️ Remoção
+# ❌ Desinstalação
 
 Para remover todas as configurações instaladas:
 
@@ -180,17 +190,16 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 
 ---
 
-# 🤝 Contribuindo
+# ❓ Dúvidas
 
-Sugestões, melhorias e correções são sempre bem-vindas.
+Caso encontre algum problema:
 
-Caso encontre algum problema, abra uma Issue.
+* Verifique se o VS Code está instalado.
+* Confirme que a extensão **Run On Save** está habilitada.
+* Execute novamente o `install.ps1`.
 
 ---
 
 # 📄 Licença
 
-Este projeto está licenciado sob a licença MIT.
-
-```
-```
+Projeto distribuído sob a licença MIT.
