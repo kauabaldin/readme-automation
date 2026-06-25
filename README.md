@@ -1,42 +1,19 @@
 
 # README Automático
 
-> Automatize a geração e atualização dos arquivos `README.md` dos seus projetos com apenas uma instalação.
+Automatize a geração e atualização dos arquivos `README.md` dos seus projetos.
 
-O **README Automático** monitora arquivos `.prw` e `.tlpp` e mantém o `README.md` sempre atualizado, eliminando a necessidade de editar a documentação manualmente.
-
-> [!TIP]
-> Após a instalação, basta salvar um arquivo `.prw` ou `.tlpp` para que o `README.md` do módulo seja atualizado automaticamente.
+Após a instalação, basta salvar um arquivo `.prw` ou `.tlpp` para que o `README.md` seja atualizado automaticamente.
 
 ---
 
 ## Funcionalidades
 
-- Geração automática do `README.md`
-- Atualização automática ao salvar arquivos `.prw` e `.tlpp`
-- Compatível com projetos contendo múltiplos módulos
-- Instalação simplificada
-- Preserva as configurações existentes do Visual Studio Code
-- Configura automaticamente a extensão **Run On Save**
-- Atualização manual quando necessário
-
----
-
-## Estrutura do Projeto
-
-```text
-readme-automatico/
-│
-├── scripts/
-│   ├── generate-readmes.ps1
-│   ├── install.ps1
-│   └── uninstall.ps1
-│
-├── .gitignore
-├── LICENSE
-├── README.md
-└── readme-automatico.bat
-```
+- Geração automática do `README.md`;
+- Atualização ao salvar arquivos `.prw` e `.tlpp`;
+- Preserva as configurações existentes do Visual Studio Code;
+- Configuração automática da extensão **Run On Save**;
+- Instalação simples através de um script PowerShell.
 
 ---
 
@@ -46,14 +23,14 @@ Antes de instalar, certifique-se de possuir:
 
 - Windows
 - PowerShell 5.1 ou superior
-- Visual Studio Code
 - Git
+- Visual Studio Code
 
 ---
 
-## Instalação
+# Instalação
 
-### 1. Clone o repositório
+## 1. Clone o repositório
 
 ```bash
 git clone https://github.com/kauabaldin/readme-automatico.git
@@ -67,7 +44,7 @@ cd readme-automatico
 
 ---
 
-### 2. Execute o instalador
+## 2. Execute o instalador
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\install.ps1
@@ -75,9 +52,9 @@ powershell -ExecutionPolicy Bypass -File scripts\install.ps1
 
 ---
 
-### 3. Selecione a pasta dos seus projetos
+## 3. Selecione a pasta dos seus projetos
 
-O instalador abrirá uma janela para que você selecione a pasta onde seus projetos estão armazenados.
+O instalador abrirá automaticamente uma janela para seleção da pasta onde seus projetos estão armazenados.
 
 Exemplos:
 
@@ -91,44 +68,31 @@ ou
 D:\Workspace
 ```
 
-Não é necessário digitar o caminho manualmente.
-
 ---
 
-## O que o instalador faz?
+## O que será configurado?
 
-Durante a instalação, o README Automático:
+Durante a instalação serão realizadas automaticamente as seguintes configurações:
 
-- Cria a pasta `scripts`, caso não exista;
-- Copia o script de geração automática;
-- Cria a pasta `.vscode`, caso não exista;
-- Preserva as configurações existentes do Visual Studio Code;
-- Configura automaticamente o **Run On Save**;
-- Adiciona a recomendação da extensão **Run On Save**;
-- Instala a extensão automaticamente (quando possível);
-- Cria um arquivo interno para controle da instalação.
+- Criação da pasta `scripts`, caso não exista;
+- Cópia do script de geração automática;
+- Criação da pasta `.vscode`, caso não exista;
+- Configuração da extensão **Run On Save**;
+- Adição da recomendação da extensão no Visual Studio Code;
+- Preservação das configurações existentes.
 
 > [!NOTE]
 > Nenhuma configuração existente do Visual Studio Code é removida ou sobrescrita.
 
 ---
 
-## Como utilizar
+# Como utilizar
 
-Após concluir a instalação, basta abrir seus projetos normalmente no Visual Studio Code.
+Após a instalação basta abrir seus projetos no Visual Studio Code.
 
-Sempre que salvar um arquivo:
+Sempre que um arquivo `.prw` ou `.tlpp` for salvo, o `README.md` será atualizado automaticamente.
 
-- `.prw`
-- `.tlpp`
-
-o `README.md` será atualizado automaticamente.
-
----
-
-## Atualização manual
-
-Caso deseje atualizar todos os READMEs manualmente:
+Caso queira executar manualmente:
 
 ```bat
 readme-automatico.bat
@@ -136,25 +100,7 @@ readme-automatico.bat
 
 ---
 
-## Exemplo de README Gerado
-
-````markdown
-# Módulo Exemplo
-
-Repositório contendo os fontes customizados do módulo.
-
----
-
-| Fonte |
-| ------ |
-| EXEMPLO001 |
-| EXEMPLO002 |
-| EXEMPLO003 |
-`````
-
----
-
-## Atualizando a ferramenta
+# Atualizando a ferramenta
 
 Atualize o repositório:
 
@@ -170,7 +116,7 @@ powershell -ExecutionPolicy Bypass -File scripts\install.ps1
 
 ---
 
-## Desinstalação
+# Desinstalação
 
 Execute:
 
@@ -178,22 +124,17 @@ Execute:
 powershell -ExecutionPolicy Bypass -File scripts\uninstall.ps1
 ```
 
-A desinstalação remove apenas os arquivos e configurações adicionados pelo **README Automático**, preservando as configurações pessoais existentes.
+A desinstalação remove apenas os arquivos e configurações adicionados pelo README Automático.
 
 ---
 
-## Contribuindo
+# Contribuindo
 
-Contribuições são sempre bem-vindas.
-
-Caso encontre algum problema ou tenha sugestões de melhoria:
-
-* Abra uma Issue;
-* Envie um Pull Request.
+Caso queira contribuir com melhorias, sinta-se à vontade para abrir uma **Issue** ou enviar um **Pull Request**.
 
 ---
 
-## Licença
+# Licença
 
 Este projeto está licenciado sob a **MIT License**.
 
@@ -204,4 +145,3 @@ Este projeto está licenciado sob a **MIT License**.
 **Automatizando a documentação para que você possa focar no desenvolvimento.**
 
 </div>
-
